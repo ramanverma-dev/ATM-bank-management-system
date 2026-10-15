@@ -10,7 +10,7 @@ async function request(path, options = {}) {
     ...options,
   });
   const data = await response.json().catch(() => ({}));
-  if (!response.ok) throw new Error(data.message || data.error || `Request failed (${response.status})`);
+  if (!response.ok) throw new Error(data.message || data.detail || data.error || `Request failed (${response.status})`);
   return data;
 }
 const money = (value) => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 2 }).format(Number(value || 0));
