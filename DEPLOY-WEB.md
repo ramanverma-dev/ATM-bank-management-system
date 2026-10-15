@@ -12,6 +12,7 @@ Deploy the `backend` directory as a Docker service using `backend/Dockerfile` (o
 - `DB_PASSWORD`
 - `FRONTEND_ORIGIN`: exact HTTPS origin for the deployed Vercel website
 - `COOKIE_SECURE=true`
+- `COOKIE_SAME_SITE=none`
 - `PORT=8080` if your provider requires a fixed port
 
 Once deployed, verify `https://YOUR-API-HOST/api/health` returns status ok.
